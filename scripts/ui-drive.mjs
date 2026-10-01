@@ -47,6 +47,7 @@ ws.addEventListener("message", (m) => {
 
 await size(1280, 900);
 await goto(BASE + "/");
+await until("(document.querySelector('h1')?.textContent ?? 'Opening').indexOf('Opening') < 0", 40000);
 const h1 = await ev("document.querySelector('h1')?.textContent");
 check("title and wordmark render", (await ev("document.title")) === "Pickup" && /Pickup/.test(await ev("document.querySelector('[class*=mark]')?.textContent")), { title: await ev("document.title") });
 check("a new visitor sees a real prompt and no sample text to click", h1 === "What are you building?" && (await ev("document.querySelectorAll('li button').length")) === 0, { h1 });
@@ -74,12 +75,12 @@ for (let i = 0; i < 6 && !ok2; i++) {
   ok2 = await until("[...document.querySelectorAll('article')].some(a => /Used [0-9]+ memor/.test(a.textContent))", 30000);
   if (!ok2) { await sleep(8000); await clickText("Send"); }
 }
-check("second session shows 'Used N memories'", ok2, { label: await ev("[...document.querySelectorAll('button')].map(b => b.textContent).find(t => t.indexOf('Used') === 0)") });
-await until("[...document.querySelectorAll('article')].some(a => a.textContent.indexOf('Next') > -1)", 30000);
-await clickText("Used");
+check("second session shows 'Used N memories'", ok2, { label: await ev("document.querySelector('[class*=receiptHead]')?.textContent") });
+await until("[...document.querySelectorAll('article p[class*=text]')].pop()?.textContent.indexOf('Next') > -1 && !document.querySelector('button[class*=send]').textContent.startsWith('Thinking')", 40000);
+// the recall receipt is printed open; there is nothing to click
 await sleep(900);
-check("memory chips open and list text with age", (await ev("document.querySelectorAll('li[class*=chip] time').length")) > 0, { chips: await ev("document.querySelectorAll('li[class*=chip] time').length") });
-const reply = await ev("[...document.querySelectorAll('article')].pop()?.textContent");
+check("recall receipt lists memory text with age", (await ev("document.querySelectorAll('li[class*=chip] time').length")) > 0, { chips: await ev("document.querySelectorAll('li[class*=chip] time').length") });
+const reply = await ev("[...document.querySelectorAll('article p[class*=text]')].pop()?.textContent");
 check("reply uses the remembered stack without asking again", /next/i.test(reply) && !/what (framework|stack)|tell me (about|more)/i.test(reply), { reply: reply?.slice(0, 200) });
 await shot("03-second-session-memories");
 

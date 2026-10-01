@@ -1,6 +1,6 @@
 {
- "at": "2026-10-01T10:29:46.455Z",
- "base": "http://localhost:3200",
+ "at": "2026-10-01T15:03:09.262Z",
+ "base": "http://localhost:3301",
  "widths": [
   320,
   375,
@@ -38,7 +38,7 @@
   {
    "name": "320px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 163,
+   "heroBottom": 126,
    "viewport": 700
   },
   {
@@ -67,7 +67,7 @@
   {
    "name": "375px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 168,
+   "heroBottom": 126,
    "viewport": 760
   },
   {
@@ -96,7 +96,7 @@
   {
    "name": "414px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 172,
+   "heroBottom": 126,
    "viewport": 800
   },
   {
@@ -125,7 +125,7 @@
   {
    "name": "768px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 189,
+   "heroBottom": 381,
    "viewport": 1024
   },
   {
@@ -146,12 +146,12 @@
   {
    "name": "1024px: rail plus conversation fill at least 60% of the width",
    "ok": true,
-   "pct": 100
+   "pct": 94
   },
   {
    "name": "1024px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 196,
+   "heroBottom": 273,
    "viewport": 768
   },
   {
@@ -172,12 +172,12 @@
   {
    "name": "1280px: rail plus conversation fill at least 60% of the width",
    "ok": true,
-   "pct": 89
+   "pct": 83
   },
   {
    "name": "1280px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 205,
+   "heroBottom": 293,
    "viewport": 800
   },
   {
@@ -198,12 +198,12 @@
   {
    "name": "1440px: rail plus conversation fill at least 60% of the width",
    "ok": true,
-   "pct": 87
+   "pct": 81
   },
   {
    "name": "1440px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 213,
+   "heroBottom": 345,
    "viewport": 900
   },
   {
@@ -224,12 +224,12 @@
   {
    "name": "1920px: rail plus conversation fill at least 60% of the width",
    "ok": true,
-   "pct": 71
+   "pct": 66
   },
   {
    "name": "1920px: headline and recap visible without scrolling",
    "ok": true,
-   "heroBottom": 213,
+   "heroBottom": 441,
    "viewport": 1080
   },
   {

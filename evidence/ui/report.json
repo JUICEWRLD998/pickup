@@ -1,6 +1,6 @@
 {
- "at": "2026-10-01T10:31:24.956Z",
- "base": "http://localhost:3200",
+ "at": "2026-10-01T15:07:10.214Z",
+ "base": "http://localhost:3302",
  "checks": [
   {
    "name": "title and wordmark render",
@@ -41,17 +41,17 @@
   {
    "name": "second session shows 'Used N memories'",
    "ok": true,
-   "label": "Used 2 memories"
+   "label": "Used 2 memoriesrecalled in 1.5 s"
   },
   {
-   "name": "memory chips open and list text with age",
+   "name": "recall receipt lists memory text with age",
    "ok": true,
    "chips": 2
   },
   {
    "name": "reply uses the remembered stack without asking again",
    "ok": true,
-   "reply": "PickupYou are building a Walrus Sites app on mainnet with Next.js 16. Your `remember` calls are returning 429 errors.Used 2 memoriesUser is building a Walrus Sites app on mainnet with Next.js 16just n"
+   "reply": "You are building a Walrus Sites app on mainnet with Next.js 16. You are hitting 429 errors with your `remember` calls."
   },
   {
    "name": "no element past the edge at 320px",
@@ -102,11 +102,11 @@
    "name": "text contrast is at least 4.5:1 for every measured pair",
    "ok": true,
    "contrast": {
-    "body text on its card": 13.99,
-    "muted label": 6.98,
-    "Send label": 4.56,
-    "memory chip text": 11.68,
-    "status line": 8.24
+    "body text on its card": 15.55,
+    "muted label": 7.76,
+    "Send label": 7.76,
+    "memory chip text": 14.96,
+    "status line": 12.41
    },
    "low": []
   },

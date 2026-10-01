@@ -41,7 +41,7 @@ await cdp("Page.addScriptToEvaluateOnNewDocument", { source: `try { localStorage
 
 const overflow = `(() => { const vw = document.documentElement.clientWidth; return [...document.querySelectorAll('body *')].filter(e => { const r = e.getBoundingClientRect(); const s = getComputedStyle(e); if (s.visibility === 'hidden' || s.display === 'none') return false; return r.width > 0 && (r.right > vw + 1 || r.left < -1) && !e.closest('[data-open="false"]'); }).map(e => e.tagName + '.' + String(e.className).slice(0, 30)); })()`;
 const railVisible = `(() => { const r = document.querySelector('aside'); const b = r.getBoundingClientRect(); const s = getComputedStyle(r); return s.visibility !== 'hidden' && b.right > 0 && b.left < window.innerWidth && b.width > 100; })()`;
-const filled = `(() => { const vw = innerWidth; const c = document.querySelector('[class*=column]').getBoundingClientRect(); const a = document.querySelector('aside').getBoundingClientRect(); const railW = getComputedStyle(document.querySelector('aside')).position === 'static' ? a.width : 0; const used = railW + Math.min(c.width, vw - railW); return Math.round(100 * used / vw); })()`;
+const filled = `(() => { const vw = innerWidth; const c = document.querySelector('[class*=column]').getBoundingClientRect(); const a = document.querySelector('aside').getBoundingClientRect(); const railW = getComputedStyle(document.querySelector('aside')).position !== 'fixed' ? a.width : 0; const used = railW + Math.min(c.width, vw - railW); return Math.round(100 * used / vw); })()`;
 
 for (const [w, h] of WIDTHS) {
   await size(w, h);
