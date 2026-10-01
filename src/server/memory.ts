@@ -18,13 +18,17 @@ export interface MemwalLike {
   rememberAndWait(text: string, namespace?: string): Promise<{ status?: string }>;
 }
 
-export type SaveDecision = { save: true; text: string; truncated: boolean } | { save: false; reason: "too_short" | "empty" };
+/** A question that states nothing about the user is not worth a write. "I am on 0.1.8, why does it 429?" still is. */
+const STATES_A_FACT = /\b(i am|i'm|i use|i have|i run|i moved|my|we are|we're|we use|we have|our)\b/i;
+
+export type SaveDecision = { save: true; text: string; truncated: boolean } | { save: false; reason: "too_short" | "empty" | "question" };
 
 /** Short chit-chat is not worth a 30 s write, and the relayer has no write dedupe (issue #273). */
 export function decideSave(text: string): SaveDecision {
   const t = text.trim();
   if (!t) return { save: false, reason: "empty" };
   if (t.split(/\s+/).length < MIN_SAVE_WORDS) return { save: false, reason: "too_short" };
+  if (/\?\s*$/.test(t) && !STATES_A_FACT.test(t)) return { save: false, reason: "question" };
   if (t.length > MAX_SAVE_CHARS) return { save: true, text: t.slice(0, MAX_SAVE_CHARS), truncated: true };
   return { save: true, text: t, truncated: false };
 }

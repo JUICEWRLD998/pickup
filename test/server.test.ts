@@ -29,6 +29,10 @@ describe("decideSave", () => {
     expect(decideSave("   ")).toEqual({ save: false, reason: "empty" });
     expect(decideSave("thanks a lot")).toEqual({ save: false, reason: "too_short" });
   });
+  it("skips a bare question but keeps one that states a fact", () => {
+    expect(decideSave("Which framework and network am I on, and what error am I hitting?")).toEqual({ save: false, reason: "question" });
+    expect(decideSave("I am on memwal 0.1.8, why do my remember calls return 429?").save).toBe(true);
+  });
   it("saves a real turn", () => {
     const d = decideSave("I am on memwal 0.1.8 and my remember calls return 429 on mainnet");
     expect(d.save).toBe(true);
