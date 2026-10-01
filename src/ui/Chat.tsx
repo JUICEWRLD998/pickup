@@ -49,8 +49,12 @@ export function Chat() {
   const pending = useRef(0);
   const endRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => setCode(loadCode()), []);
-  useEffect(() => endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" }), [msgs]);
+  useEffect(() => {
+    setCode(loadCode());
+  }, []);
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });
+  }, [msgs]);
 
   const bumpSaving = useCallback((delta: number, outcome?: SaveState) => {
     pending.current += delta;
