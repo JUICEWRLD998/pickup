@@ -5,24 +5,24 @@ Design and memory rules: `implementation.md`. Tick a box only when its exit chec
 
 ## Phase 0: Scaffold and smoke (Oct 1)
 
-- [ ] `git init`, set identity, first commit. `npm create next-app` (App Router, TypeScript, no Tailwind). Add `@mysten-incubation/memwal@0.1.8`, `@mysten/sui`, `@mysten/seal`, `@mysten/walrus`, `ai`, `zod`, `motion`.
-- [ ] `.env.local` is in place (copied from the old repo). `.gitignore` covers it.
-- [ ] `scripts/smoke.mjs`: `health`, one `rememberAndWait` plus `recall` in a throwaway namespace, one Gemini 2.5 Flash call via OpenRouter. Copy from the old `scripts/p0-memwal.mjs`, `scripts/p0-openrouter.mjs`.
-- [ ] Read the walform rules page (judges, weights, region exclusions, "Beyond the Big Two" wording). Write it to `NOTES.md`.
+- [x] `git init`, set identity, first commit. `npm create next-app` (App Router, TypeScript, no Tailwind). Add `@mysten-incubation/memwal@0.1.8`, `@mysten/sui`, `@mysten/seal`, `@mysten/walrus`, `ai`, `zod`, `motion`.
+- [x] `.env.local` is in place (copied from the old repo). `.gitignore` covers it.
+- [x] `scripts/smoke.mjs`: `health`, one `rememberAndWait` plus `recall` in a throwaway namespace, one Gemini 2.5 Flash call via OpenRouter. Copy from the old `scripts/p0-memwal.mjs`, `scripts/p0-openrouter.mjs`.
+- [x] Read the walform rules page (judges, weights, region exclusions, "Beyond the Big Two" wording). Write it to `NOTES.md`.
 - **Exit:** smoke script prints three green lines. Evidence saved to `evidence/p0.json`.
 
 ## Phase 1: Thin path (Oct 1 to 2)
 
-- [ ] Memory code: random 12-char id, cookie, shown in the UI, accepted from a text box.
-- [ ] `POST /api/chat`: recall (8 s abort, `sort: "recent"`, limit 5) then stream Gemini with the memories in the system prompt.
-- [ ] Save path: after the reply, `analyze` the turn in the background; queue one write at a time per user; skip turns under about 8 words; cap saved text at 12 KB.
-- [ ] Saving state in the UI: "saving to Walrus", then "saved".
+- [x] Memory code: random 12-char id, cookie, shown in the UI, accepted from a text box.
+- [x] `POST /api/chat`: recall (8 s abort, `sort: "recent"`, limit 5) then stream Gemini with the memories in the system prompt.
+- [x] Save path: after the reply, `analyze` the turn in the background; queue one write at a time per user; skip turns under about 8 words; cap saved text at 12 KB.
+- [x] Saving state in the UI: "saving to Walrus", then "saved".
 - **Exit (the journey):** tell it a fact in browser A. Open a clean profile, enter the memory code, ask about the fact. It answers from memory without asking again. Save the transcript and timings to `evidence/p1-journey.json`.
 
 ## Phase 2: Visible memory (Oct 2)
 
-- [ ] "Used N memories" line under each reply, expandable, with text and age.
-- [ ] "Remember this" box (`rememberAndWait`); the new fact is kept in client state until it is recallable (index lag).
+- [x] "Used N memories" line under each reply, expandable, with text and age.
+- [x] "Remember this" box (`rememberAndWait`); the new fact is kept in client state until it is recallable (index lag).
 - [ ] Contradiction case: user changes a fact; the newer one wins and the reply says what changed.
 - **Exit:** the three cases above pass in a driven browser, screenshots saved.
 
