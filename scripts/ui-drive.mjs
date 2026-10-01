@@ -76,17 +76,17 @@ check("second session shows 'Used N memories'", ok2, { label: await ev("[...docu
 await until("[...document.querySelectorAll('article')].some(a => a.textContent.indexOf('Next') > -1)", 30000);
 await clickText("Used");
 await sleep(900);
-check("memory chips open and list text with age", (await ev("document.querySelectorAll('li time').length")) > 0, { chips: await ev("document.querySelectorAll('li time').length") });
+check("memory chips open and list text with age", (await ev("document.querySelectorAll('li[class*=chip] time').length")) > 0, { chips: await ev("document.querySelectorAll('li[class*=chip] time').length") });
 const reply = await ev("[...document.querySelectorAll('article')].pop()?.textContent");
 check("reply uses the remembered stack without asking again", /next/i.test(reply) && !/what (framework|stack)|tell me (about|more)/i.test(reply), { reply: reply?.slice(0, 200) });
 await shot("03-second-session-memories");
 
 // layout at five widths, with a planted overflow control
-for (const w of [320, 375, 414, 768, 1280]) {
+for (const w of [320, 375, 414, 768, 1024, 1280, 1440, 1920]) {
   await size(w, 800);
   await sleep(250);
   const over = await ev("(() => { const vw = document.documentElement.clientWidth; return [...document.querySelectorAll('body *')].filter(e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.right > vw + 1; }).map(e => e.tagName + '.' + String(e.className).slice(0, 30)); })()");
-  check(`no element past the right edge at ${w}px`, over.length === 0, { over: over.slice(0, 3) });
+  check(`no element past the edge at ${w}px`, over.length === 0, { over: over.slice(0, 3) });
   if (w === 375) await shot("04-375");
 }
 await ev("(() => { const d = document.createElement('div'); d.id = '__ctl'; d.style.cssText = 'position:absolute;left:0;top:0;width:2000px;height:4px'; document.body.appendChild(d); })()");
@@ -103,7 +103,7 @@ const contrast = await ev(`(() => {
   const bgOf = (el) => { let e = el; while (e) { const c = getComputedStyle(e).backgroundColor; if (c && c !== 'rgba(0, 0, 0, 0)') return c; e = e.parentElement; } return 'rgb(0,0,0)'; };
   const pairs = {};
   const pick = (name, sel) => { const el = document.querySelector(sel); if (!el) { pairs[name] = null; return; } pairs[name] = ratio(toRgb(getComputedStyle(el).color), toRgb(bgOf(el))); };
-  pick('body text on its card', 'article p[class*=text]'); pick('muted tag line', 'p[class*=tag]'); pick('Send label', 'button[class*=solid]'); pick('memory chip text', 'li[class*=chip]'); pick('status line', 'p[class*=status]');
+  pick('body text on its card', 'article p[class*=text]'); pick('muted label', 'p[class*=who]'); pick('Send label', 'button[class*=send]'); pick('memory chip text', 'li[class*=chip]'); pick('status line', 'p[class*=status]');
   return pairs; })()`);
 const low = Object.entries(contrast).filter(([, v]) => v !== null && v < 4.5);
 check("text contrast is at least 4.5:1 for every measured pair", low.length === 0, { contrast, low });
