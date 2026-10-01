@@ -1,0 +1,15 @@
+ RUN  v4.1.11 C:/Users/fadhm/Desktop/memwal-bounty/poc
+stdout | poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the attacker rewrites the victim's stored message through the attacker's own chat
+[A] victim message 5a03928f-5e52-411d-b065-5e9f8b0f7142 in chat df82a48b-c93a-4c95-9aa7-0a5b497f907e now reads: "ATTACKER CONTROLLED TEXT"
+ ✓ poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the attacker rewrites the victim's stored message through the attacker's own chat 711ms
+ ✓ poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the request schema accepts it: messages[].id is any string and parts are z.any() 4ms
+stdout | poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > normal flow: the limiter refuses once 30 are stored (request 32)
+[B] normal flow: request 32 -> HTTP 429
+ ✓ poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > normal flow: the limiter refuses once 30 are stored (request 32) 3453ms
+stdout | poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > approval flow: 45 requests all reach the model and the counter stays at 0
+[B] approval flow: 45 requests -> statuses 200; model calls 45; counted by the limiter 0
+ ✓ poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > approval flow: 45 requests all reach the model and the counter stays at 0 4868ms
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  17:10:58
+   Duration  16.35s (transform 359ms, setup 0ms, import 400ms, tests 15.42s, environment 0ms)

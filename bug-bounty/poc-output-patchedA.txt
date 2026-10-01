@@ -1,0 +1,13 @@
+[A] victim message f1d674d1-d458-4aee-8a32-8b2fb8ed250f in chat efbd2004-f645-4fd3-a8a8-279ed1472285 now reads: "VICTIM ORIGINAL ANSWER"
+ × poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the attacker rewrites the victim's stored message through the attacker's own chat 716ms
+   → expected 'VICTIM ORIGINAL ANSWER' to be 'ATTACKER CONTROLLED TEXT' // Object.is equality
+ ✓ poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the request schema accepts it: messages[].id is any string and parts are z.any() 4ms
+[B] normal flow: request 32 -> HTTP 429
+ ✓ poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > normal flow: the limiter refuses once 30 are stored (request 32) 3552ms
+[B] approval flow: 45 requests -> statuses 200; model calls 45; counted by the limiter 0
+ ✓ poc.test.ts > B. the hourly message limit never counts requests sent with `messages` instead of `message` > approval flow: 45 requests all reach the model and the counter stays at 0 5043ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  poc.test.ts > A. /api/chat tool-approval flow overwrites ANY message, in any user's chat, by id > the attacker rewrites the victim's stored message through the attacker's own chat
+AssertionError: expected 'VICTIM ORIGINAL ANSWER' to be 'ATTACKER CONTROLLED TEXT' // Object.is equality
+    199|     console.log(`[A] victim message ${victimMsg} in chat ${after.chatI…
+      Tests  1 failed | 3 passed (4)
