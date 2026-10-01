@@ -1,0 +1,79 @@
+{
+ "at": "2026-10-01T09:59:40.361Z",
+ "serverUrl": "https://relayer.memory.walrus.xyz",
+ "sdk": "0.1.8",
+ "steps": [
+  {
+   "name": "relayer.health",
+   "ok": true,
+   "ms": 991,
+   "value": {
+    "status": "ok",
+    "version": "0.1.0",
+    "relayerVersion": "0.1.0",
+    "apiVersion": "1.0.0",
+    "minSupportedSdk": {
+     "typescript": "0.0.4",
+     "python": "0.1.0",
+     "mcp": "0.0.1"
+    },
+    "featureFlags": {
+     "auth.accountBoundNonce": true,
+     "auth.sealSessionHeader": true,
+     "config.publicDeploymentMetadata": true,
+     "remember.asyncJobs": true,
+     "remember.bulk": true,
+     "runtime.versionEndpoint": true
+    },
+    "deprecations": [
+     {
+      "surface": "header:x-delegate-key",
+      "deprecatedSince": "1.0.0",
+      "removalApiVersion": "2.0.0",
+      "guidance": "Use x-seal-session for relayer-managed SEAL decrypt flows; manual-mode requests should send no decrypt credential."
+     },
+     {
+      "surface": "env:SEAL_KEY_SERVERS",
+      "deprecatedSince": "1.0.0",
+      "removalApiVersion": "2.0.0",
+      "guidance": "Use SEAL_SERVER_CONFIGS so independent and committee key-server configs share one JSON schema."
+     }
+    ],
+    "build": {
+     "commit": "f58104334b9da4b6f70a3f28191054b29e4dd860"
+    },
+    "mode": "production",
+    "prompt_versions": {
+     "extract": "extract.v6",
+     "ask": "ask.v2"
+    },
+    "write_ready": true,
+    "writes": "ok"
+   }
+  },
+  {
+   "name": "memory.rememberAndWait",
+   "ok": true,
+   "ms": 36059,
+   "value": {
+    "status": null,
+    "blob_id": "j6D8A_psIv9U…"
+   }
+  },
+  {
+   "name": "memory.recall",
+   "ok": true,
+   "ms": 2794
+  },
+  {
+   "name": "gemini.2.5-flash",
+   "ok": true,
+   "ms": 959,
+   "value": {
+    "model": "google/gemini-2.5-flash",
+    "reply": "ready",
+    "cost": 0.0000046
+   }
+  }
+ ]
+}
