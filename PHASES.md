@@ -28,10 +28,10 @@ Design and memory rules: `implementation.md`. Tick a box only when its exit chec
 
 ## Phase 3: UI (Oct 2)
 
-- [ ] Run `ui-studio`. House look: SIGNAL DECK (flat blue-black, one mint-teal accent, no glass, no violet, no Tailwind). Tokens from the old `styles/tokens.css`.
-- [ ] One signature moment: memory chips landing under a reply. Reduced-motion fallback.
-- [ ] Drive Chrome over CDP. Measure contrast in writing. Check 320, 375, 768, 1280 px. A grep or a build exit code is not verification.
-- **Exit:** screenshots in `evidence/ui/`, scorer run, no overflow, no console errors.
+- [x] Run `ui-studio`. House look: SIGNAL DECK (flat blue-black, one mint-teal accent, no glass, no violet, no Tailwind). Tokens from the old `styles/tokens.css`.
+- [x] One signature moment: memory chips landing under a reply. Reduced-motion fallback.
+- [x] Drive Chrome over CDP. Measure contrast in writing. Check 320, 375, 768, 1280 px. A grep or a build exit code is not verification.
+- **Exit:** screenshots in `evidence/ui/`, no overflow, no console errors. DONE with Hallmark followed by hand (pre-flight, macrostructure, tokens, gates 34, 49-53, 59, 60 checked on the rendered page). NOT run: `ui-studio/scripts/ui-score.mjs` and the blind critic.
 
 ## Phase 4: Deploy (Oct 2 to 3)
 

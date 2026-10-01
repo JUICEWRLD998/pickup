@@ -10,7 +10,7 @@
 |---|---|
 | Chat with Gemini 2.5 Flash (OpenRouter), streamed | LIVE locally |
 | Recall before each answer, save after it, on Walrus Memory mainnet | LIVE locally, verified (`evidence/p1-journey.json`, `evidence/ui/report.json`) |
-| "Used N memories" under each reply, "Remember this" box | LIVE locally |
+| Memory ledger beside the chat (what I remember, newest first, the entries used in an answer light up), welcome-back state built from real stored memory, "Used N memories" under each reply, "Add a fact" | LIVE locally |
 | Same memory on a second device through a memory code | LIVE locally (code survives reload; second device not tested on real hardware) |
 | Deployed public URL | NOT LIVE |
 | Days of real use by outside users | NOT LIVE |
@@ -40,7 +40,8 @@ Checks: `npm run verify` (type check and 18 tests, no keys needed). With keys an
 
 - Phase 0 smoke on mainnet: write 36 s, recall 2.8 s, Gemini 1 s (`evidence/p0.json`).
 - Phase 1 journey: a fact told in session A is recalled in a brand-new session with the same code; a different code does not see it; a hand-added correction is used (`evidence/p1-journey.json`).
-- UI, driven in headless Chrome: the same journey through the real page, 5 widths with no overflow (and a planted 2000 px control that is detected), measured text contrast at least 4.5:1, no page errors (`evidence/ui/report.json`).
+- UI, driven in headless Chrome: the same journey through the real page, 8 widths (320, 375, 414, 768, 1024, 1280, 1440, 1920) with no overflow and a planted 2000 px control that is detected, measured text contrast at least 4.5:1, no page errors (`evidence/ui/report.json`).
+- Every-screen composition: the same real memory rendered at all 8 widths, with the drawer on phones and tablets and a permanent ledger from 1024 px; screenshots read, not only measured (`evidence/ui/screens.json`, `node scripts/ui-screens.mjs`).
 
 ## Known limits
 
