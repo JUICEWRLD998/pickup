@@ -1,0 +1,56 @@
+{
+ "at": "2026-10-01T10:05:20.207Z",
+ "base": "http://localhost:3200",
+ "steps": [
+  {
+   "name": "A.turn1",
+   "status": 200,
+   "ms": 5799,
+   "memoriesUsed": 0,
+   "replied": true,
+   "err": null
+  },
+  {
+   "name": "A.save",
+   "status": 200,
+   "ms": 24852,
+   "saved": 2,
+   "failed": 0
+  },
+  {
+   "name": "A.newSession",
+   "ms": 5125,
+   "tries": 1,
+   "recalled": true,
+   "memoriesUsed": 2,
+   "replyMentionsStack": true,
+   "replyMentions429": true,
+   "replyAsksAgain": false,
+   "reply": "You're building a Walrus Sites app on mainnet with Next.js 16. Your `remember` calls are returning 429 errors."
+  },
+  {
+   "name": "B.control",
+   "ms": 1176,
+   "memoriesUsed": 0,
+   "replyMentionsNext": false,
+   "reply": "I don't know which framework or network you are on, nor do I know what error you are hitting. Could you please tell me your stack and what you are building? This will help me assist you better."
+  },
+  {
+   "name": "A.fact.save",
+   "status": 200,
+   "ms": 33384,
+   "saved": 1
+  },
+  {
+   "name": "A.correction",
+   "ms": 3464,
+   "replyMentionsTestnet": true,
+   "reply": "You are on testnet for debugging this week."
+  }
+ ],
+ "verdict": {
+  "recalledInNewSession": true,
+  "controlIsolated": true,
+  "correctionUsed": true
+ }
+}
