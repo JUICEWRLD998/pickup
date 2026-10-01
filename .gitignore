@@ -11,3 +11,8 @@ next-env.d.ts
 evidence/ui/*.png
 !evidence/ui/03-second-session-memories.png
 !evidence/ui/04-375.png
+!evidence/ui/screen-1440-answer.png
+!evidence/ui/screen-1920-welcome.png
+!evidence/ui/screen-375-welcome.png
+!evidence/ui/screen-375-answer.png
+!evidence/ui/screen-768-drawer.png

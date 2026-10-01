@@ -1,11 +1,16 @@
 {
- "at": "2026-10-01T10:15:15.495Z",
+ "at": "2026-10-01T10:31:24.956Z",
  "base": "http://localhost:3200",
  "checks": [
   {
-   "name": "page renders title and wordmark",
+   "name": "title and wordmark render",
    "ok": true,
    "title": "Pickup"
+  },
+  {
+   "name": "a new visitor sees a real prompt and no sample text to click",
+   "ok": true,
+   "h1": "What are you building?"
   },
   {
    "name": "memory code shown and valid",
@@ -46,30 +51,45 @@
   {
    "name": "reply uses the remembered stack without asking again",
    "ok": true,
-   "reply": "PickupYou are building a Walrus Sites app on mainnet with Next.js 16. You are hitting 429 errors with your `remember` calls.Used 2 memoriesUser's remember calls keep returning 429 errorsjust nowUser i"
+   "reply": "PickupYou are building a Walrus Sites app on mainnet with Next.js 16. Your `remember` calls are returning 429 errors.Used 2 memoriesUser is building a Walrus Sites app on mainnet with Next.js 16just n"
   },
   {
-   "name": "no element past the right edge at 320px",
+   "name": "no element past the edge at 320px",
    "ok": true,
    "over": []
   },
   {
-   "name": "no element past the right edge at 375px",
+   "name": "no element past the edge at 375px",
    "ok": true,
    "over": []
   },
   {
-   "name": "no element past the right edge at 414px",
+   "name": "no element past the edge at 414px",
    "ok": true,
    "over": []
   },
   {
-   "name": "no element past the right edge at 768px",
+   "name": "no element past the edge at 768px",
    "ok": true,
    "over": []
   },
   {
-   "name": "no element past the right edge at 1280px",
+   "name": "no element past the edge at 1024px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the edge at 1280px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the edge at 1440px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the edge at 1920px",
    "ok": true,
    "over": []
   },
@@ -83,9 +103,9 @@
    "ok": true,
    "contrast": {
     "body text on its card": 13.99,
-    "muted tag line": 8.24,
+    "muted label": 6.98,
     "Send label": 4.56,
-    "memory chip text": 12.41,
+    "memory chip text": 11.68,
     "status line": 8.24
    },
    "low": []

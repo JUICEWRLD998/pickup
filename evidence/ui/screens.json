@@ -1,0 +1,253 @@
+{
+ "at": "2026-10-01T10:29:46.455Z",
+ "base": "http://localhost:3200",
+ "widths": [
+  320,
+  375,
+  414,
+  768,
+  1024,
+  1280,
+  1440,
+  1920
+ ],
+ "checks": [
+  {
+   "name": "320px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "320px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "320px: memory rail is a drawer, closed",
+   "ok": true,
+   "visible": false
+  },
+  {
+   "name": "320px: Memory button opens the drawer",
+   "ok": true
+  },
+  {
+   "name": "320px: Close hides the drawer",
+   "ok": true
+  },
+  {
+   "name": "320px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 163,
+   "viewport": 700
+  },
+  {
+   "name": "375px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "375px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "375px: memory rail is a drawer, closed",
+   "ok": true,
+   "visible": false
+  },
+  {
+   "name": "375px: Memory button opens the drawer",
+   "ok": true
+  },
+  {
+   "name": "375px: Close hides the drawer",
+   "ok": true
+  },
+  {
+   "name": "375px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 168,
+   "viewport": 760
+  },
+  {
+   "name": "414px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "414px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "414px: memory rail is a drawer, closed",
+   "ok": true,
+   "visible": false
+  },
+  {
+   "name": "414px: Memory button opens the drawer",
+   "ok": true
+  },
+  {
+   "name": "414px: Close hides the drawer",
+   "ok": true
+  },
+  {
+   "name": "414px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 172,
+   "viewport": 800
+  },
+  {
+   "name": "768px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "768px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "768px: memory rail is a drawer, closed",
+   "ok": true,
+   "visible": false
+  },
+  {
+   "name": "768px: Memory button opens the drawer",
+   "ok": true
+  },
+  {
+   "name": "768px: Close hides the drawer",
+   "ok": true
+  },
+  {
+   "name": "768px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 189,
+   "viewport": 1024
+  },
+  {
+   "name": "1024px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "1024px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "1024px: memory rail is permanent",
+   "ok": true,
+   "visible": true
+  },
+  {
+   "name": "1024px: rail plus conversation fill at least 60% of the width",
+   "ok": true,
+   "pct": 100
+  },
+  {
+   "name": "1024px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 196,
+   "viewport": 768
+  },
+  {
+   "name": "1280px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "1280px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "1280px: memory rail is permanent",
+   "ok": true,
+   "visible": true
+  },
+  {
+   "name": "1280px: rail plus conversation fill at least 60% of the width",
+   "ok": true,
+   "pct": 89
+  },
+  {
+   "name": "1280px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 205,
+   "viewport": 800
+  },
+  {
+   "name": "1440px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "1440px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "1440px: memory rail is permanent",
+   "ok": true,
+   "visible": true
+  },
+  {
+   "name": "1440px: rail plus conversation fill at least 60% of the width",
+   "ok": true,
+   "pct": 87
+  },
+  {
+   "name": "1440px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 213,
+   "viewport": 900
+  },
+  {
+   "name": "1920px: welcome state opens on real memory",
+   "ok": true,
+   "h1": "Welcome back."
+  },
+  {
+   "name": "1920px: no element past the edge",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "1920px: memory rail is permanent",
+   "ok": true,
+   "visible": true
+  },
+  {
+   "name": "1920px: rail plus conversation fill at least 60% of the width",
+   "ok": true,
+   "pct": 71
+  },
+  {
+   "name": "1920px: headline and recap visible without scrolling",
+   "ok": true,
+   "heroBottom": 213,
+   "viewport": 1080
+  },
+  {
+   "name": "1440px: answer arrives with 'Used N memories'",
+   "ok": true
+  },
+  {
+   "name": "375px: answer arrives with 'Used N memories'",
+   "ok": true
+  },
+  {
+   "name": "no uncaught page errors across all widths",
+   "ok": true,
+   "errors": []
+  },
+  {
+   "name": "planted 2000px control IS detected (probe can fail)",
+   "ok": true
+  }
+ ]
+}
