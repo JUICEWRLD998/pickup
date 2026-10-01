@@ -47,7 +47,9 @@ ws.addEventListener("message", (m) => {
 
 await size(1280, 900);
 await goto(BASE + "/");
-check("page renders title and wordmark", (await ev("document.querySelector('h1')?.textContent")) === "Pickup", { title: await ev("document.title") });
+const h1 = await ev("document.querySelector('h1')?.textContent");
+check("title and wordmark render", (await ev("document.title")) === "Pickup" && /Pickup/.test(await ev("document.querySelector('[class*=mark]')?.textContent")), { title: await ev("document.title") });
+check("a new visitor sees a real prompt and no sample text to click", h1 === "What are you building?" && (await ev("document.querySelectorAll('li button').length")) === 0, { h1 });
 const code = await ev("document.querySelector('code')?.textContent");
 check("memory code shown and valid", typeof code === "string" && /^[a-z0-9]{10,24}$/.test(code), { codeLength: code?.length });
 await shot("01-empty");
