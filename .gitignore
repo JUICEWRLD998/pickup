@@ -9,3 +9,5 @@ next-env.d.ts
 *.log
 .vercel/
 evidence/ui/*.png
+!evidence/ui/03-second-session-memories.png
+!evidence/ui/04-375.png

@@ -1,0 +1,99 @@
+{
+ "at": "2026-10-01T10:15:15.495Z",
+ "base": "http://localhost:3200",
+ "checks": [
+  {
+   "name": "page renders title and wordmark",
+   "ok": true,
+   "title": "Pickup"
+  },
+  {
+   "name": "memory code shown and valid",
+   "ok": true,
+   "codeLength": 12
+  },
+  {
+   "name": "Send enabled with text",
+   "ok": true
+  },
+  {
+   "name": "reply streams in",
+   "ok": true
+  },
+  {
+   "name": "save completes on mainnet",
+   "ok": true,
+   "status": "Saved to Walrus: 2 memories."
+  },
+  {
+   "name": "code survives reload",
+   "ok": true
+  },
+  {
+   "name": "chat history is empty after reload",
+   "ok": true
+  },
+  {
+   "name": "second session shows 'Used N memories'",
+   "ok": true,
+   "label": "Used 2 memories"
+  },
+  {
+   "name": "memory chips open and list text with age",
+   "ok": true,
+   "chips": 2
+  },
+  {
+   "name": "reply uses the remembered stack without asking again",
+   "ok": true,
+   "reply": "PickupYou are building a Walrus Sites app on mainnet with Next.js 16. You are hitting 429 errors with your `remember` calls.Used 2 memoriesUser's remember calls keep returning 429 errorsjust nowUser i"
+  },
+  {
+   "name": "no element past the right edge at 320px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the right edge at 375px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the right edge at 414px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the right edge at 768px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "no element past the right edge at 1280px",
+   "ok": true,
+   "over": []
+  },
+  {
+   "name": "planted 2000px control IS detected (probe can fail)",
+   "ok": true,
+   "flagged": 1
+  },
+  {
+   "name": "text contrast is at least 4.5:1 for every measured pair",
+   "ok": true,
+   "contrast": {
+    "body text on its card": 13.99,
+    "muted tag line": 8.24,
+    "Send label": 4.56,
+    "memory chip text": 12.41,
+    "status line": 8.24
+   },
+   "low": []
+  },
+  {
+   "name": "no uncaught page errors",
+   "ok": true,
+   "errors": []
+  }
+ ]
+}
