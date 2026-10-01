@@ -78,3 +78,24 @@
   --dur-short: 220ms;
   --dur-long: 420ms;
 }
+
+/* Pickup layout and responsive type. Phone first; each band below is composed, not stretched. */
+:root {
+  --rail-w: 20rem;
+  --shell-max: 110rem;
+  --chat-measure: 46rem;
+  --bar-h: 3.5rem;
+  --tap: 2.75rem;
+  --text-lead: clamp(1.625rem, 1.1rem + 2.4vw, 3rem);
+  --text-chat: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --pad-stage: clamp(1rem, 0.5rem + 2.4vw, 3.5rem);
+  --color-paper-rail: oklch(17% 0.017 250);
+  --color-scrim: oklch(8% 0.02 250 / 0.6);
+}
+
+@media (min-width: 90rem) {
+  :root {
+    --rail-w: 23rem;
+    --chat-measure: 50rem;
+  }
+}

@@ -48,3 +48,10 @@ export async function save(code: string, kind: "turn" | "fact", text: string): P
   if (!res.ok) throw new Error(j.error === "rate_limited" ? "Saving is rate limited, try again in a minute." : (j.message ?? j.error ?? `save failed (${res.status})`));
   return j;
 }
+
+export async function listMemories(code: string): Promise<{ items: Mem[]; error: string | null }> {
+  const res = await fetch("/api/memories", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ code }) });
+  if (!res.ok) return { items: [], error: "Could not load memories." };
+  const j = (await res.json()) as { items?: Mem[]; error?: string | null };
+  return { items: j.items ?? [], error: j.error ?? null };
+}

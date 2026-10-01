@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist } from "next/font/google";
+import { Bricolage_Grotesque, Geist, IBM_Plex_Mono } from "next/font/google";
 import "../styles/tokens.css";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display-face", display: "swap" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono-face", display: "swap" });
 const body = Geist({ subsets: ["latin"], variable: "--font-body-face", display: "swap" });
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
         <main id="main">{children}</main>
       </body>
