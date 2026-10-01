@@ -62,11 +62,11 @@ export function tidy(rows: { text: string; created_at?: string }[]): Memory[] {
   return out.sort((a, b) => ts(b) - ts(a));
 }
 
-export async function recallFor(memwal: MemwalLike, namespace: string, query: string): Promise<{ items: Memory[]; error: string | null; ms: number }> {
+export async function recallFor(memwal: MemwalLike, namespace: string, query: string, limit = 5): Promise<{ items: Memory[]; error: string | null; ms: number }> {
   const t0 = performance.now();
   try {
     const r = await Promise.race([
-      memwal.recall({ query, limit: 5, namespace, sort: "recent" }),
+      memwal.recall({ query, limit, namespace, sort: "recent" }),
       new Promise<never>((_, rej) => setTimeout(() => rej(new Error("recall timed out")), RECALL_TIMEOUT_MS)),
     ]);
     return { items: tidy(r.results), error: null, ms: Math.round(performance.now() - t0) };
