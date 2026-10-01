@@ -1,0 +1,80 @@
+/* Hallmark · genre: modern-minimal · route: custom (tuned) · macrostructure: Split Studio (desk) + Long Document (evidence)
+ * theme: custom · vibe: "custodian's desk at night, receipts and redaction tape" · nav: N1 · footer: Ft2 · enrichment: none
+ * paper: oklch(15% 0.016 250) · accent: oklch(80% 0.14 168) mint · display: Bricolage Grotesque · body: Geist · mono: IBM Plex Mono (slip only)
+ * axes: dark / grotesk-sans / chromatic-other (teal-green) · studied: no
+ * Every colour and font in page CSS is var(--...). Raw values live only in this file.
+ */
+:root {
+  /* The stamp as a custom property: CSS comments do not survive into the computed stylesheet, properties do. */
+  --macrostructure: Split Studio (desk) and Long Document (evidence);
+
+  /* deck: flat blue-black surfaces */
+  --color-paper: oklch(15% 0.016 250);
+  --color-paper-2: oklch(19% 0.018 250);
+  --color-paper-3: oklch(23.5% 0.02 250);
+  --color-rule: oklch(32% 0.02 250);
+  --color-rule-2: oklch(26% 0.018 250);
+  --color-neutral: oklch(62% 0.02 250);
+  --color-muted: oklch(73% 0.02 250);
+  --color-ink: oklch(94% 0.008 250);
+  --color-ink-2: oklch(85% 0.01 250);
+
+  /* the one accent */
+  --color-accent: oklch(80% 0.14 168);
+  --color-accent-strong: oklch(86% 0.14 168);
+  --color-accent-ink: oklch(18% 0.03 168);
+  --color-focus: oklch(84% 0.16 168);
+
+  /* receipt slip: cool pale paper, printed */
+  --color-slip: oklch(94% 0.012 160);
+  --color-slip-2: oklch(88% 0.014 160);
+  --color-slip-rule: oklch(78% 0.014 160);
+  --color-slip-ink: oklch(21% 0.02 250);
+  --color-slip-muted: oklch(42% 0.02 250);
+  --color-stored: oklch(40% 0.09 168);
+  --color-tape: oklch(18% 0.02 250);
+  --color-tape-ink: oklch(92% 0.01 160);
+  --color-stamp: oklch(46% 0.17 27);
+  --color-held: oklch(44% 0.02 250);
+
+  /* semantic, deck */
+  --color-danger: oklch(74% 0.13 27);
+  --color-shadow: oklch(8% 0.02 250);
+
+  /* type */
+  --font-display: var(--font-display-face), "Bricolage Grotesque", sans-serif;
+  --font-body: var(--font-body-face), "Geist", sans-serif;
+  --font-mono: var(--font-mono-face), "IBM Plex Mono", monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+
+  /* 4pt spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --rule: 1px;
+  --gutter: 16px;
+  --measure: 66ch;
+
+  /* motion: mirrored in src/ui/motion.ts. Change both together. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
