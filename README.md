@@ -4,7 +4,7 @@ A chatbot for Walrus and Sui builders that remembers your project. Tell it your 
 decision once. Open it in another browser or on another device, enter your memory code, and it already
 knows.
 
-Built for Walrus Sessions 8, "Chatbots That Remember," by Mustapha Fadhlullah, independent security
+Built for Walrus Sessions 8, "Chatbots That Remember," by Mustapha Fadhlullah
 researcher.
 
 ![Pickup answering from two stored memories, with the receipt showing which ones it used](evidence/ui/screen-1440-answer.png)
